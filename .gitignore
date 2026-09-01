@@ -1,0 +1,138 @@
+# ============================================================
+# UrjaSetu — .gitignore
+# Confidential files, build artifacts, and dependencies are
+# NEVER committed to the repository.
+# ============================================================
+
+# ----- Secrets & confidential environment files -----
+.env
+.env.*
+!.env.example
+apps/*/.env
+apps/*/.env.*
+apps/**/.env
+apps/**/.env.*
+**/.env
+**/.env.*
+.env.local
+.env.*.local
+secrets.json
+secrets.yaml
+secrets.yml
+credentials.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_rsa.*
+*_rsa
+*_ed25519
+
+# ----- Logs & runtime data -----
+*.log
+logs/
+**/logs/
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ----- Databases & local state -----
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+db_data/
+**/db_data/
+*.db-shm
+*.db-wal
+
+# ----- Python -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ----- Node / TypeScript -----
+node_modules/
+**/node_modules/
+.npm/
+.yarn/
+.pnp.*
+.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ----- Web (Vite / React) -----
+apps/web/dist/
+apps/web/build/
+**/dist/
+**/build/
+.vite/
+*.tsbuildinfo
+
+# ----- Firmware build artifacts -----
+firmware/**/*.bin
+firmware/**/*.elf
+firmware/**/*.hex
+firmware/**/*.map
+firmware/build/
+apps/api/_dump_final.txt
+
+# ----- Backups, temporary & dev-debug scratch files -----
+*.bak
+*.backup
+*.backup-*
+*.orig
+*.tmp
+*.swp
+*~
+apps/payment-gateway/src/**/*.backup.ts
+apps/payment-gateway/src/**/*.backup.*
+apps/payment-gateway/x402-backup-*/
+apps/payment-gateway/x402-backups/
+
+# Dev/debug scratch files from the build session
+apps/api/_*.py
+apps/api/_*.txt
+apps/api/*_out.txt
+apps/api/*_final.txt
+apps/api/plan_out.txt
+apps/api/final_plan_out.txt
+apps/web/build-log.txt
+git_status.txt
+git_diffstat.txt
+plan_response.json
+
+# ----- IDE / Editor -----
+.idea/
+.vscode/
+*.code-workspace
+.history/
+
+# ----- OS -----
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ----- Docker local volumes -----
+docker_data/
